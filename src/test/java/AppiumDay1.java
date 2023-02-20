@@ -1,3 +1,4 @@
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -19,11 +20,11 @@ public class AppiumDay1 {
         desiredCapabilities.setCapability("platformVersion","9.0");
         desiredCapabilities.setCapability("deviceName","Pixel_2");
         desiredCapabilities.setCapability("automationName","UiAutomator2");
-        desiredCapabilities.setCapability("app","C:\\Asoftware\\AppiumProject1\\src\\Apps\\Calculator.apk");
+        desiredCapabilities.setCapability("app","C:\\Asoftware\\AppiumProject1\\src\\Apps\\Hm.apk");
         driver= new AndroidDriver<AndroidElement>(new URL("http://localhost:4723/wd/hub"),desiredCapabilities);
     }
     @Test
-    public void app() throws MalformedURLException {
+    public void app(){
 
         driver.findElementById("com.google.android.calculator:id/digit_9").click();
         driver.findElementById("com.google.android.calculator:id/op_mul").click();
