@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="AppiumProject1" />
+        <module name="Com.TestNGTeam105" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AppiumProject1" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>
