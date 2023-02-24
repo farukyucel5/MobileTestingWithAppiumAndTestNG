@@ -1,36 +1,15 @@
 package tests;
 
+import Driver.DriverFactoryCalculator;
 import Locators.CalculatorUserInterface;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import utilities.ConfigReader;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class CalculatorTest {
-
-
-    AndroidDriver<AndroidElement> driver;
-    CalculatorUserInterface calculatorApp;
-
-
-    @BeforeClass
-    public void setUp() throws MalformedURLException {
-        DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
-        desiredCapabilities.setCapability("platformName", ConfigReader.getProperty("platformName"));
-        desiredCapabilities.setCapability("platformVersion",ConfigReader.getProperty("platformVersion"));
-        desiredCapabilities.setCapability("deviceName",ConfigReader.getProperty("deviceName"));
-        desiredCapabilities.setCapability("automationName",ConfigReader.getProperty("automationName"));
-        desiredCapabilities.setCapability("app",ConfigReader.getProperty("app"));
-        driver= new AndroidDriver<AndroidElement>(new URL("http://localhost:4723/wd/hub"),desiredCapabilities);
-        calculatorApp=new CalculatorUserInterface(driver);
-    }
+    CalculatorUserInterface calculatorApp=new CalculatorUserInterface(DriverFactoryCalculator.initializeTheCalculatorDriver());
 
     @Test(priority = 1)
     public void multiplyingFeature() throws InterruptedException {
@@ -47,7 +26,7 @@ public class CalculatorTest {
         calculatorApp.clickClear();
     }
     @Test(priority = 2)
-    public void dividingFeature() throws InterruptedException {
+    public void dividingFeature(){
         calculatorApp.clickNum1();
         calculatorApp.getNum1();
         calculatorApp.deleting();
@@ -62,7 +41,7 @@ public class CalculatorTest {
 
     }
     @Test(priority = 3)
-    public void addingFeature() throws InterruptedException {
+    public void addingFeature(){
         calculatorApp.clickNum1();
         calculatorApp.getNum1();
         calculatorApp.deleting();
@@ -77,7 +56,7 @@ public class CalculatorTest {
     }
 
     @Test(priority = 4)
-    public void subtractingFeature() throws InterruptedException {
+    public void subtractingFeature(){
         calculatorApp.clickNum1();
         calculatorApp.getNum1();
         calculatorApp.deleting();
@@ -93,7 +72,7 @@ public class CalculatorTest {
 
     @AfterClass
     public void tearDown() {
-        driver.quit();
+        DriverFactoryCalculator.closeDriver();
     }
 
 
