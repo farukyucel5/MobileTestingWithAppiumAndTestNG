@@ -38,7 +38,7 @@ public class N11UserInterfacePage {
 
     public void clickSearchBox() {
         try{
-            WebDriverWait wait = new WebDriverWait(driver,60);
+            WebDriverWait wait = new WebDriverWait(driver,15);
             wait.until(ExpectedConditions.presenceOfElementLocated(ad));
             driver.findElement(ad).click();
             wait.until(ExpectedConditions.presenceOfElementLocated(navigateBack));
@@ -46,7 +46,7 @@ public class N11UserInterfacePage {
             wait.until(ExpectedConditions.presenceOfElementLocated(searchBar));
             driver.findElement(searchBar).click();
         }catch (Exception e) {
-            WebDriverWait wait = new WebDriverWait(driver,60);
+            WebDriverWait wait = new WebDriverWait(driver,15);
             wait.until(ExpectedConditions.presenceOfElementLocated(searchBar));
             driver.findElement(searchBar).click();
 
