@@ -9,8 +9,10 @@ public class N11Test {
 
     @Test
     public void searchBoxFunctionality(){
+
         n11UserInterfacePage.clickSearchBox();
         n11UserInterfacePage.typeSearchBoxAndHitEnter("Lenovo Thinkpad");
+        n11UserInterfacePage.verifyTheProductListedContainLenovo();
 
     }
 
