@@ -8,6 +8,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.ConfigReader;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -20,8 +21,8 @@ public class MobilBrowserTesting {
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
-        caps.setCapability("platformVersion", "9.0");
-        caps.setCapability("deviceName", "Pixel_2");
+        caps.setCapability("platformVersion", ConfigReader.getProperty("platformVersionTablet"));
+        caps.setCapability("deviceName", ConfigReader.getProperty("deviceNameTablet"));
         caps.setCapability("browserName", "chrome");
         caps.setCapability("chromedriverExecutable", "C:\\Asoftware\\AppiumProject1\\src\\test\\java\\Driver\\chromedriver.exe");
 
