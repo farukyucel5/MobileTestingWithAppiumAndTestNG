@@ -68,7 +68,7 @@ public class N11UserInterfacePage {
         wait.until(ExpectedConditions.presenceOfElementLocated(filteredProductList));
         List<WebElement> productList =driver.findElements(filteredProductList);
         productList.forEach(each-> System.out.println(each.getText()));
-        productList.forEach(each->Assert.assertTrue(each.getText().contains("Lenovo".toLowerCase())));
+        productList.forEach(each->Assert.assertTrue(each.getText().toLowerCase().contains("lenovo")));
     }
 
 

@@ -14,22 +14,22 @@ public class CalculatorUserInterface {
     By num1 = MobileBy.AccessibilityId("3");
     By num2 = MobileBy.AccessibilityId("9");
 
-    By multiplyingSign=MobileBy.AccessibilityId("multiply");
-    By dividingSign=MobileBy.AccessibilityId("divide");
+    By multiplyingSign=MobileBy.AccessibilityId("çarpı");
+    By dividingSign=MobileBy.AccessibilityId("bölü");
 
-    By addSign=MobileBy.AccessibilityId("plus");
+    By addSign=MobileBy.AccessibilityId("artı");
 
-    By subtractSign=MobileBy.AccessibilityId("minus");
+    By subtractSign=MobileBy.AccessibilityId("eksi");
 
-    By equalsSign=MobileBy.AccessibilityId("equals");
+    By equalsSign=MobileBy.AccessibilityId("eşittir");
 
-    By deleteSign=MobileBy.AccessibilityId("delete");
+    By deleteSign=MobileBy.AccessibilityId("sil");
 
     By resultSpace=MobileBy.id("com.google.android.calculator:id/formula");
 
     By finalResultSpace=MobileBy.id("com.google.android.calculator:id/result_final");
 
-    By clear=MobileBy.AccessibilityId("clear");
+    By clear=MobileBy.AccessibilityId("temizle");
 
 
 
